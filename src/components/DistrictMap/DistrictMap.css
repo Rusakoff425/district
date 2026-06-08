@@ -1,0 +1,43 @@
+.district-map {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.district-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.district-map .map-region,
+.district-map [data-id] {
+  cursor: pointer;
+  transition:
+    fill 0.2s ease,
+    opacity 0.2s ease,
+    filter 0.2s ease,
+    stroke 0.2s ease;
+}
+
+.district-map .map-region:hover,
+.district-map [data-id]:hover {
+  fill: #d08a3c;
+  opacity: 0.82;
+  filter: saturate(1.2);
+}
+
+.district-map .map-region.selected,
+.district-map [data-id].selected {
+  filter: brightness(0.85) saturate(1.25);
+  stroke: #2b1a0e;
+  stroke-width: 4;
+}
+
+.district-map .map-region:focus,
+.district-map [data-id]:focus {
+  outline: none;
+  stroke: #111827;
+  stroke-width: 4;
+}
