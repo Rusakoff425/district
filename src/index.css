@@ -28,13 +28,14 @@ select {
 
 .app__header {
   max-width: 980px;
+  padding-top: 24px;
   margin: 0 auto 32px;
   text-align: center;
 }
 
 .app__header h1 {
   margin: 0 0 12px;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(32px, 5vw, 46px);
   line-height: 1.05;
 }
 

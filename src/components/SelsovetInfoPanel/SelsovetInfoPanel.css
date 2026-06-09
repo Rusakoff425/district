@@ -3,62 +3,35 @@
   top: 24px;
   padding: 24px;
 
+  max-height: calc(80dvh - 48px);
+  overflow-y: auto;
+
   border: 1px solid rgba(97, 65, 34, 0.18);
   border-radius: 14px;
 
-  background: rgba(255, 250, 242, 0.42);
+  background: rgba(255, 250, 242, 0.56);
   box-shadow: 0 18px 48px rgba(60, 38, 16, 0.12);
 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(97, 65, 34, 0.28) transparent;
 }
 
-.selsovet-info-panel--empty {
-  color: #6c5b48;
+.selsovet-info-panel::-webkit-scrollbar {
+  width: 6px;
 }
 
-.selsovet-info-panel h2 {
-  margin: 0 0 12px;
-  font-size: 28px;
-  line-height: 1.15;
+.selsovet-info-panel::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.selsovet-info-panel h3 {
-  margin: 28px 0 14px;
-  font-size: 18px;
+.selsovet-info-panel::-webkit-scrollbar-thumb {
+  background: rgba(97, 65, 34, 0.28);
+  border-radius: 999px;
 }
 
-.selsovet-info-panel h4 {
-  margin: 0 0 8px;
-  font-size: 16px;
-}
-
-.selsovet-info-panel p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-.selsovet-info-panel__sights {
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.selsovet-info-panel__sight {
-  padding: 16px;
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.34);
-  border: 1px solid rgba(97, 65, 34, 0.08);
-
-  backdrop-filter: blur(20px) saturate(115%);
-  -webkit-backdrop-filter: blur(20px) saturate(115%);
-}
-
-@media (max-width: 900px) {
-  .selsovet-info-panel {
-    position: static;
-  }
+.selsovet-info-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(97, 65, 34, 0.42);
 }
