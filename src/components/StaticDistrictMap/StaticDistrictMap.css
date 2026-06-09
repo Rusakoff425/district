@@ -1,0 +1,23 @@
+.static-district-map {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.static-district-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 12px rgba(232, 199, 122, 0.5))
+    drop-shadow(0 24px 32px rgba(0, 0, 0, 0.42));
+}
+
+.static-district-map .map-region,
+.static-district-map [data-id] {
+  cursor: default;
+  stroke: rgba(255, 246, 213, 0.8);
+  stroke-width: 3;
+}
