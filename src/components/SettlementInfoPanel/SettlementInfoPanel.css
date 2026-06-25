@@ -1,4 +1,4 @@
-.festival-info-panel {
+.settlement-info-panel {
   position: sticky;
   top: 14px;
   max-height: calc(100vh - 118px);
@@ -15,42 +15,58 @@
   -webkit-backdrop-filter: blur(18px);
 }
 
-.festival-info-panel--empty { color: rgba(245, 234, 209, 0.78); }
+.settlement-info-panel--empty {
+  color: rgba(245, 234, 209, 0.78);
+}
 
-.festival-info-panel__heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; color: #fff8e8; }
-.festival-info-panel__heading small { color: var(--muted); display: block; margin-top: 6px; }
+.settlement-info-panel__heading h2 {
+  margin: 0;
+  color: #fff8e8;
+  font-family: Georgia, "Times New Roman", serif;
+}
 
-.festival-info-panel__description {
+.settlement-info-panel__heading small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.settlement-info-panel__description {
   margin-top: 14px;
   color: rgba(245, 234, 209, 0.86);
   line-height: 1.62;
 }
 
-.festival-info-panel__meta {
+.settlement-info-panel__meta {
   display: grid;
   gap: 12px;
   margin-top: 18px;
 }
 
-.festival-info-panel__meta div {
+.settlement-info-panel__meta div {
   display: grid;
   gap: 4px;
   padding: 12px 0;
   border-top: 1px solid rgba(232, 199, 122, 0.2);
 }
 
-.festival-info-panel__meta span {
+.settlement-info-panel__meta span {
   color: var(--gold);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.festival-info-panel__meta strong {
+.settlement-info-panel__meta strong {
   color: rgba(245, 234, 209, 0.9);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.45;
 }
 
-@media (max-width: 1220px) { .festival-info-panel { position: static; max-height: none; } }
+@media (max-width: 1220px) {
+  .settlement-info-panel {
+    position: static;
+    max-height: none;
+  }
+}

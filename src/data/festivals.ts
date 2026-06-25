@@ -1,22 +1,164 @@
-import { selsovets } from "./selsovets";
+export type FestivalPosition = {
+  left: string;
+  top: string;
+};
 
 export type Festival = {
-  id: string; // match selsovet id
+  id: string;
   title: string;
   location: string;
   description: string;
   date?: string;
-  logo?: string; // optional key matching file name (without extension) in src/assets/festival-logos/
+  logo?: string;
+  position?: FestivalPosition;
+  format?: string;
+  audience?: string;
+  contacts?: string;
 };
 
-export const festivals: Festival[] = selsovets.map((s, i) => ({
-  id: s.id,
-  title: `${s.name} — Карта фестивалей`,
-  location: s.name,
-  description: s.sights?.[0]?.description ?? s.description,
-  date: undefined,
-  // default logo mapping: 1..N -> src/assets/festival-logos/1.png, etc.
-  logo: `${i + 1}.png`,
-}));
+export const festivals: Festival[] = [
+  {
+    id: "selsovet-01",
+    title: "Жилэк",
+    location: "Таймасовский сельсовет",
+    description:
+      "Праздник ягод, семейных традиций и локальных угощений. Здесь можно отдельно менять описание фестиваля, не затрагивая карточки сельсоветов и другие страницы.",
+    date: "Июль",
+    logo: "1.png",
+    format: "ярмарка, концертная программа, мастер-классы",
+    audience: "жители района, гости, семьи с детьми",
+  },
+  {
+    id: "selsovet-02",
+    title: "Кинйэ йыйыны",
+    location: "Свободинский сельсовет",
+    description:
+      "Культурная встреча с национальными играми, музыкой и ремесленными рядами. Текст хранится только в данных страницы фестивалей.",
+    date: "Июнь",
+    logo: "2.png",
+    format: "народные игры, выступления, выставка ремесел",
+    audience: "творческие коллективы и гости района",
+  },
+  {
+    id: "selsovet-03",
+    title: "Симек",
+    location: "Кривле-Илюшкинский сельсовет",
+    description:
+      "Летний праздник с обрядами, песнями и площадками для местных мастеров.",
+    date: "Июнь",
+    logo: "3.png",
+    format: "обрядовая программа, музыка, ярмарка",
+  },
+  {
+    id: "selsovet-04",
+    title: "Какук сайе",
+    location: "Якшимбетовский сельсовет",
+    description:
+      "Фестиваль народного календаря с интерактивными зонами и гастрономическими точками.",
+    date: "Май",
+    logo: "4.png",
+    format: "интерактивы, дегустации, концерт",
+  },
+  {
+    id: "selsovet-05",
+    title: "Бал корто",
+    location: "Таймасовский сельсовет",
+    description:
+      "Медовый праздник с пасечниками, выставкой продукции и семейной программой.",
+    date: "Август",
+    logo: "5.png",
+    format: "ярмарка меда, мастер-классы, дегустации",
+  },
+  {
+    id: "selsovet-06",
+    title: "Родники",
+    location: "Ермолаевский сельсовет",
+    description:
+      "Праздник природных источников, экологических маршрутов и бережного отношения к родной земле.",
+    date: "Июль",
+    logo: "6.png",
+    format: "экотропа, экскурсии, концерт",
+  },
+  {
+    id: "selsovet-07",
+    title: "Рыбный край",
+    location: "Ленинский сельсовет",
+    description:
+      "Гастрономический фестиваль с конкурсами, угощениями и программой у воды.",
+    date: "Август",
+    logo: "7.png",
+    format: "кулинарные площадки, соревнования, музыка",
+  },
+  {
+    id: "selsovet-08",
+    title: "Самауыр",
+    location: "Мурапталовский сельсовет",
+    description:
+      "Теплая встреча с чаепитием, песнями, ремеслами и семейными традициями.",
+    date: "Сентябрь",
+    logo: "8.png",
+    format: "чаепитие, фольклор, ремесла",
+  },
+  {
+    id: "selsovet-09",
+    title: "Семья",
+    location: "Бахмутский сельсовет",
+    description:
+      "Праздник семейных ценностей с конкурсами, детскими зонами и творческими номерами.",
+    date: "Июль",
+    logo: "9.png",
+    format: "детские площадки, конкурсы, концерт",
+  },
+  {
+    id: "selsovet-10",
+    title: "Тамьян йыйыны",
+    location: "Илькинеевский сельсовет",
+    description:
+      "Фестиваль наследия, где встречаются фольклор, история рода и современное творчество.",
+    date: "Июнь",
+    logo: "10.png",
+    format: "фольклор, выставка, национальные игры",
+  },
+  {
+    id: "selsovet-11",
+    title: "Печан омасы",
+    location: "Мурапталовский сельсовет",
+    description:
+      "Сельский праздник труда, сенокоса и народной песни с конкурсными площадками.",
+    date: "Июль",
+    logo: "11.png",
+    format: "полевые конкурсы, песни, угощения",
+  },
+  {
+    id: "selsovet-12",
+    title: "Тамле фест",
+    location: "Зяк-Ишметовский сельсовет",
+    description:
+      "Гастрономический фестиваль вкусов района с локальными блюдами и презентациями производителей.",
+    date: "Сентябрь",
+    logo: "12.png",
+    format: "гастрономия, дегустации, ярмарка",
+  },
+  {
+    id: "selsovet-13",
+    title: "Три спаса",
+    location: "Отрадинский сельсовет",
+    description:
+      "Праздник урожая, меда, яблок и хлеба с выставкой подворий и концертной программой.",
+    date: "Август",
+    logo: "13.png",
+    format: "выставка подворий, концерт, ярмарка",
+  },
+  {
+    id: "selsovet-14",
+    title: "Узоры моего народа",
+    location: "Ермолаевский сельсовет",
+    description:
+      "Фестиваль декоративно-прикладного искусства, костюма, орнамента и народных традиций.",
+    date: "Октябрь",
+    logo: "14.png",
+    format: "выставка, мастер-классы, дефиле",
+  },
+];
 
 export default festivals;

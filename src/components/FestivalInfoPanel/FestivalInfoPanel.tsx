@@ -12,7 +12,9 @@ export function FestivalInfoPanel({ festival }: Props) {
         <div className="festival-info-panel__heading">
           <h2>Карта фестивалей</h2>
         </div>
-        <p>Выберите логотип на карте, чтобы увидеть информацию о фестивале.</p>
+        <p>
+          Выберите логотип на карте, чтобы увидеть информацию о фестивале.
+        </p>
       </aside>
     );
   }
@@ -27,11 +29,30 @@ export function FestivalInfoPanel({ festival }: Props) {
       <p className="festival-info-panel__description">{festival.description}</p>
 
       <div className="festival-info-panel__meta">
-        {festival.date ? <div>Дата: {festival.date}</div> : null}
-      </div>
-
-      <div className="festival-info-panel__actions">
-        <button type="button">Подробнее</button>
+        {festival.date ? (
+          <div>
+            <span>Дата</span>
+            <strong>{festival.date}</strong>
+          </div>
+        ) : null}
+        {festival.format ? (
+          <div>
+            <span>Формат</span>
+            <strong>{festival.format}</strong>
+          </div>
+        ) : null}
+        {festival.audience ? (
+          <div>
+            <span>Для кого</span>
+            <strong>{festival.audience}</strong>
+          </div>
+        ) : null}
+        {festival.contacts ? (
+          <div>
+            <span>Контакты</span>
+            <strong>{festival.contacts}</strong>
+          </div>
+        ) : null}
       </div>
     </aside>
   );
