@@ -373,14 +373,19 @@ a {
 
 .sidebar__item {
   display: flex;
+  width: 100%;
   min-height: 50px;
   align-items: center;
   gap: 14px;
   padding: 0 20px;
   border: 1px solid transparent;
   border-radius: 12px;
-  color: rgba(245, 234, 209, 0.86);
+  background: transparent;
+  /* less-white, more muted greenish text for sidebar items */
+  color: rgba(180, 200, 185, 0.95);
+  cursor: pointer;
   font-size: 14px;
+  text-align: left;
 }
 
 .sidebar__item span {

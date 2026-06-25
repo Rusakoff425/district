@@ -1,0 +1,99 @@
+.settlements-map-root {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.settlements-map {
+  width: 100%;
+}
+
+.settlements-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 5px rgba(51, 36, 13, 0.5))
+    drop-shadow(0 24px 32px rgba(0, 0, 0, 0.42));
+}
+
+.settlements-map svg path[fill="#E8CCA8"] {
+  fill: rgb(63, 141, 97);
+  stroke: rgba(232, 199, 122, 0);
+}
+
+.settlements-map svg circle[r="12"] {
+  opacity: 1;
+}
+
+.settlements-map__svg-center {
+  cursor: pointer;
+  transition: filter 180ms ease;
+  fill: #25702a;
+}
+
+.settlements-map svg > path[fill="black"] {
+  fill: #ecdaae;
+}
+
+.settlements-map__svg-center:hover,
+.settlements-map__svg-center:focus,
+.settlements-map__svg-center--active {
+  outline: none;
+  filter:
+    drop-shadow(0 0 7px rgba(232, 199, 122, 0.5))
+    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.28));
+}
+
+.settlements-map__svg-center-hit {
+  fill: transparent;
+  pointer-events: all;
+  stroke: transparent;
+}
+
+.settlements-map__svg-center-halo {
+  fill: rgba(232, 199, 122, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  stroke: rgba(255, 248, 232, 0.52);
+  stroke-width: 3;
+  transition: opacity 180ms ease;
+}
+
+.settlements-map__svg-center-circle {
+  fill: #25702a;
+  pointer-events: all;
+  stroke: rgba(255, 248, 232, 0.5);
+  stroke-width: 2;
+  transition:
+    fill 180ms ease,
+    stroke 180ms ease,
+    stroke-width 180ms ease;
+}
+
+.settlements-map__svg-center:hover .settlements-map__svg-center-halo,
+.settlements-map__svg-center:focus .settlements-map__svg-center-halo,
+.settlements-map__svg-center--active .settlements-map__svg-center-halo {
+  opacity: 1;
+}
+
+.settlements-map__svg-center:hover .settlements-map__svg-center-circle,
+.settlements-map__svg-center:focus .settlements-map__svg-center-circle,
+.settlements-map__svg-center--active .settlements-map__svg-center-circle {
+  fill: #e8c77a;
+  stroke: #fff8e8;
+  stroke-width: 3;
+}
+
+.settlements-map__svg-center-label {
+  fill: #ecdaae;
+  transition: fill 180ms ease;
+}
+
+.settlements-map__svg-center:hover .settlements-map__svg-center-label,
+.settlements-map__svg-center:focus .settlements-map__svg-center-label,
+.settlements-map__svg-center--active .settlements-map__svg-center-label {
+  fill: #fff8e8;
+}

@@ -1,0 +1,112 @@
+.festivals-root {
+  position: relative;
+  width: 100%;
+  max-width: 650px; /* match StaticDistrictMap size */
+  margin: 0 auto;
+}
+
+.festivals-map {
+  width: 100%;
+  pointer-events: none;
+}
+
+.festivals-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 5px rgba(51, 36, 13, 0.5))
+    drop-shadow(0 24px 32px rgba(0, 0, 0, 0.42));
+}
+
+.festivals-map svg path {
+  fill: rgba(63, 141, 97, 0.349);;
+  stroke: rgba(232, 199, 122, 0);
+}
+
+.festivals-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.festivals-logos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.festival-point {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.festival-logo {
+  width: 80px;
+  height: 80px;
+  padding: 6px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 199, 122, 0.18);
+  background: rgba(4, 30, 25, 0.36);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  pointer-events: auto;
+}
+
+.festival-label {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  max-width: 140px;
+  color: var(--muted);
+  font-size: 12px;
+  text-shadow: none;
+  text-align: center;
+}
+
+.festival-label__dot {
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.festival-label__text {
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+.festival-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.festival-logo:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45), 0 0 18px rgba(232,199,122,0.18);
+  background: rgba(4, 30, 25, 0.6);
+}
+
+.festival-logo.active {
+  transform: scale(1.18);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.6), 0 0 32px rgba(232,199,122,0.36);
+  background: linear-gradient(180deg, rgba(36,78,48,0.9), rgba(6,31,27,0.9));
+}
+
+.festival-logo__placeholder {
+  color: var(--gold);
+  font-size: 9px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .festival-logo { width: 48px; height: 48px; }
+}

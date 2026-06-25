@@ -2,8 +2,14 @@ import { useState } from "react";
 import gerbUrl from "./assets/gerb.svg";
 import { DistrictMap } from "./components/DistrictMap/DistrictMap";
 import { SelsovetInfoPanel } from "./components/SelsovetInfoPanel/SelsovetInfoPanel";
+import { Festivals } from "./components/Festivals/Festivals";
+import { FestivalInfoPanel } from "./components/FestivalInfoPanel/FestivalInfoPanel";
+import { SettlementInfoPanel } from "./components/SettlementInfoPanel/SettlementInfoPanel";
+import { SettlementsMap } from "./components/SettlementsMap/SettlementsMap";
 import { StaticDistrictMap } from "./components/StaticDistrictMap/StaticDistrictMap";
 import { selsovets } from "./data/selsovets";
+import { festivals } from "./data/festivals";
+import { settlements } from "./data/settlements";
 
 type Page = "about" | "territories";
 
@@ -12,9 +18,16 @@ export function App() {
   const [selectedSelsovetId, setSelectedSelsovetId] = useState<string | null>(
     "selsovet-12",
   );
+  const [territoriesView, setTerritoriesView] = useState<"map" | "settlements" | "festivals">("map");
+  const [selectedFestivalId, setSelectedFestivalId] = useState<string | null>(null);
+  const [selectedSettlementId, setSelectedSettlementId] = useState<string | null>(null);
 
   const selectedSelsovet =
     selsovets.find((selsovet) => selsovet.id === selectedSelsovetId) ?? null;
+  const selectedSettlement =
+    settlements.find((settlement) => settlement.id === selectedSettlementId) ?? null;
+  const selectedFestival =
+    festivals.find((festival) => festival.id === selectedFestivalId) ?? null;
 
   return (
     <main className="app">
@@ -133,18 +146,44 @@ export function App() {
       ) : (
         <section className="app__layout" aria-label="Карта и описание">
         <aside className="sidebar" aria-label="Разделы карты">
-          <a className="sidebar__item sidebar__item--active" href="/">
+          <button
+            type="button"
+            className={
+              territoriesView === "map" ? "sidebar__item sidebar__item--active" : "sidebar__item"
+            }
+            onClick={() => {
+              setTerritoriesView("map");
+              setSelectedFestivalId(null);
+              setSelectedSettlementId(null);
+            }}
+          >
             <span>◇</span>
             Карта района
-          </a>
-          <a className="sidebar__item" href="/">
+          </button>
+          <button
+            type="button"
+            className={territoriesView === "settlements" ? "sidebar__item sidebar__item--active" : "sidebar__item"}
+            onClick={() => {
+              setTerritoriesView("settlements");
+              setSelectedSelsovetId(null);
+              setSelectedFestivalId(null);
+            }}
+          >
             <span>⌖</span>
-            Сельсоветы
-          </a>
-          <a className="sidebar__item" href="/">
+            Населенные пункты
+          </button>
+          <button
+            type="button"
+            className={territoriesView === "festivals" ? "sidebar__item sidebar__item--active" : "sidebar__item"}
+            onClick={() => {
+              setTerritoriesView("festivals");
+              setSelectedSelsovetId(null);
+              setSelectedSettlementId(null);
+            }}
+          >
             <span>♧</span>
-            Природа
-          </a>
+            Фестивали
+          </button>
           <a className="sidebar__item" href="/">
             <span>▥</span>
             История
@@ -178,10 +217,23 @@ export function App() {
                 <span>⌾</span>
               </div>
               <div className="app__map-shell">
-                <DistrictMap
-                  selectedId={selectedSelsovetId}
-                  onSelect={setSelectedSelsovetId}
-                />
+                {territoriesView === "map" ? (
+                  <DistrictMap
+                    selectedId={selectedSelsovetId}
+                    onSelect={setSelectedSelsovetId}
+                  />
+                ) : territoriesView === "settlements" ? (
+                  <SettlementsMap
+                    settlements={settlements}
+                    selectedId={selectedSettlementId}
+                    onSelect={(id) => setSelectedSettlementId(id)}
+                  />
+                ) : (
+                  <Festivals
+                    festivals={festivals}
+                    onSelect={(id) => setSelectedFestivalId(id)}
+                  />
+                )}
               </div>
             </div>
 
@@ -195,13 +247,31 @@ export function App() {
             </div>
           </section>
 
-          <section className="details-column" aria-label="Описание сельсовета">
-            <SelsovetInfoPanel selsovet={selectedSelsovet} />
+          <section
+            className="details-column"
+            aria-label={
+              territoriesView === "map"
+                ? "Описание сельсовета"
+                : territoriesView === "settlements"
+                  ? "Описание населенного пункта"
+                  : "Описание фестиваля"
+            }
+          >
+            {territoriesView === "map" ? (
+              <SelsovetInfoPanel selsovet={selectedSelsovet} />
+            ) : territoriesView === "settlements" ? (
+              <SettlementInfoPanel settlement={selectedSettlement} />
+            ) : (
+              <FestivalInfoPanel festival={selectedFestival} />
+            )}
             <div className="details-hint">
               <span>i</span>
               <p>
-                Выберите другой сельсовет на карте, чтобы узнать больше о
-                территории
+                {territoriesView === "map"
+                  ? "Выберите другой сельсовет на карте, чтобы узнать больше о территории"
+                  : territoriesView === "settlements"
+                    ? "Выберите крупный маркер населенного пункта на карте, чтобы открыть описание справа"
+                    : "Выберите логотип фестиваля на карте, чтобы открыть отдельное описание справа"}
               </p>
             </div>
           </section>
