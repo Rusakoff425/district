@@ -15,6 +15,7 @@ type Page = "about" | "territories";
 
 export function App() {
   const [activePage, setActivePage] = useState<Page>("about");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedSelsovetId, setSelectedSelsovetId] = useState<string | null>(
     "selsovet-12",
   );
@@ -41,7 +42,7 @@ export function App() {
           <span className="brand__mark">
             <img src={gerbUrl} alt="" aria-hidden="true" />
           </span>
-          <span>
+          <span className="brand__text">
             <strong>Куюргазинский</strong>
             <small>район</small>
           </span>
@@ -62,30 +63,69 @@ export function App() {
             type="button"
             onClick={() => setActivePage("territories")}
           >
-            Территория
-          </button>
-          <button type="button">Достопримечательности</button>
-          <button type="button">Новости</button>
-          <button type="button">Контакты</button>
-        </nav>
-
-        <div className="topbar__actions" aria-label="Действия">
-          <button className="icon-button" type="button" aria-label="Поиск">
-            ⌕
-          </button>
-          <button
-            className="atlas-button"
-            type="button"
-            onClick={() => setActivePage("territories")}
-          >
-            <span>◇</span>
             Атлас района
           </button>
-          <button className="login-button" type="button">
-            <span>♙</span>
-            Войти
+        </nav>
+
+        <div className="mobile-topbar__actions">
+          <button
+            className="mobile-map-button"
+            type="button"
+            onClick={() => {
+              setActivePage("territories");
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18.5 3.75 21V6L9 3.5l6 2 5.25-2.5v15L15 21l-6-2.5Z" />
+              <path d="M9 3.5v15M15 5.5V21" />
+            </svg>
+            Карта
+          </button>
+          <button
+            className="mobile-menu-button"
+            type="button"
+            aria-label="Открыть меню"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          >
+            <span />
+            <span />
+            <span />
           </button>
         </div>
+
+        <nav
+          className={
+            isMobileMenuOpen
+              ? "mobile-menu mobile-menu--open"
+              : "mobile-menu"
+          }
+          aria-label="Мобильная навигация"
+        >
+          <button
+            className={activePage === "about" ? "mobile-menu__link--active" : ""}
+            type="button"
+            onClick={() => {
+              setActivePage("about");
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            О районе
+          </button>
+          <button
+            className={
+              activePage === "territories" ? "mobile-menu__link--active" : ""
+            }
+            type="button"
+            onClick={() => {
+              setActivePage("territories");
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            Атлас района
+          </button>
+        </nav>
       </header>
 
       {activePage === "about" ? (
@@ -97,13 +137,16 @@ export function App() {
 
             <div className="about-hero__content">
               <div className="about-hero__title-row">
-                <h1>Куюргазинский район</h1>
+                <h1>
+                  <span>Куюргазинский</span>
+                  <span>район</span>
+                </h1>
+                <p className="about-hero__tagline">душа юга Башкортостана</p>
               </div>
               <p className="about-hero__lead">
-                Куюргазинский район — это живописные ландшафты, богатое
-                культурное наследие и трудолюбивые люди. Здесь бережно хранят
-                традиции и уверенно строят будущее, развивая свой район и
-                заботясь о благополучии каждого жителя.
+                Куюргазинский район — это земля живых деревень, широких полей, тихих рек и мест, где история хранится в людях, дорогах и памятных уголках. Здесь у каждого сельсовета есть свой характер, свои достопримечательности и своя память.
+                Откройте интерактивную карту района, чтобы ближе познакомиться с его территориями, природой, культурой и местами, которые стоит увидеть.
+
               </p>
               <div className="about-hero__ornament" aria-hidden="true">
                 <span>✥</span>
@@ -148,6 +191,18 @@ export function App() {
         <aside className="sidebar" aria-label="Разделы карты">
           <button
             type="button"
+            className={territoriesView === "settlements" ? "sidebar__item sidebar__item--active" : "sidebar__item"}
+            onClick={() => {
+              setTerritoriesView("settlements");
+              setSelectedSelsovetId(null);
+              setSelectedFestivalId(null);
+            }}
+          >
+            <span>⌖</span>
+            Населенные пункты
+          </button>
+          <button
+            type="button"
             className={
               territoriesView === "map" ? "sidebar__item sidebar__item--active" : "sidebar__item"
             }
@@ -158,19 +213,7 @@ export function App() {
             }}
           >
             <span>◇</span>
-            Карта района
-          </button>
-          <button
-            type="button"
-            className={territoriesView === "settlements" ? "sidebar__item sidebar__item--active" : "sidebar__item"}
-            onClick={() => {
-              setTerritoriesView("settlements");
-              setSelectedSelsovetId(null);
-              setSelectedFestivalId(null);
-            }}
-          >
-            <span>⌖</span>
-            Населенные пункты
+            Сельсоветы
           </button>
           <button
             type="button"
@@ -184,14 +227,6 @@ export function App() {
             <span>♧</span>
             Фестивали
           </button>
-          <a className="sidebar__item" href="/">
-            <span>▥</span>
-            История
-          </a>
-          <a className="sidebar__item" href="/">
-            <span>▣</span>
-            Туризм
-          </a>
           <div className="sidebar__compass" aria-hidden="true">
             <span>N</span>
             <strong>✦</strong>
@@ -211,11 +246,6 @@ export function App() {
             </div>
 
             <div className="app__map-area">
-              <div className="zoom-control" aria-hidden="true">
-                <span>+</span>
-                <span>−</span>
-                <span>⌾</span>
-              </div>
               <div className="app__map-shell">
                 {territoriesView === "map" ? (
                   <DistrictMap
