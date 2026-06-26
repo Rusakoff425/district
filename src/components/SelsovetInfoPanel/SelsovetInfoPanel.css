@@ -134,8 +134,44 @@
   font-weight: 400;
 }
 
+.selsovet-info-panel__sight-type {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #e8c77a;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .selsovet-info-panel__sight p {
   font-size: 13px;
+}
+
+.selsovet-info-panel__sight-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.selsovet-info-panel__sight-links a {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  border: 1px solid rgba(232, 199, 122, 0.44);
+  border-radius: 999px;
+  padding: 0 12px;
+  color: #e8c77a;
+  background: rgba(232, 199, 122, 0.08);
+  font-size: 12px;
+}
+
+.selsovet-info-panel__sight-note {
+  display: block;
+  margin-top: 10px;
+  color: rgba(245, 234, 209, 0.58);
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 @media (max-width: 1220px) {

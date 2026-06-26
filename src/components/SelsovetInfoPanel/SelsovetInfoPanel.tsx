@@ -34,7 +34,7 @@ export function SelsovetInfoPanel({ selsovet }: SelsovetInfoPanelProps) {
 
       <h3>
         <span>✣</span>
-        Достопримечательности
+        Места
       </h3>
       <ul className="selsovet-info-panel__sights">
         {selsovet.sights.map((sight, index) => (
@@ -44,7 +44,37 @@ export function SelsovetInfoPanel({ selsovet }: SelsovetInfoPanelProps) {
             </span>
             <div>
               <h4>{sight.title}</h4>
-            <p>{sight.description}</p>
+              {sight.type ? (
+                <span className="selsovet-info-panel__sight-type">
+                  {sight.type}
+                </span>
+              ) : null}
+              <p>{sight.description}</p>
+              <div className="selsovet-info-panel__sight-links">
+                {sight.mapUrl ? (
+                  <a
+                    href={sight.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Открыть на Яндекс.Картах
+                  </a>
+                ) : null}
+                {sight.sourceUrl ? (
+                  <a
+                    href={sight.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Источник
+                  </a>
+                ) : null}
+              </div>
+              {sight.notes ? (
+                <small className="selsovet-info-panel__sight-note">
+                  {sight.notes}
+                </small>
+              ) : null}
             </div>
           </li>
         ))}
