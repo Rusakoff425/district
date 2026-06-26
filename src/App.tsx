@@ -269,7 +269,7 @@ export function App() {
 
             <div className="map-summary">
               <span>✥</span>
-              <strong>15 сельсоветов</strong>
+              <strong>12 сельсоветов</strong>
               <small>в составе района</small>
               <i />
               <span>♧</span>
