@@ -176,7 +176,7 @@ a {
   display: grid;
   align-self: center;
   place-items: center;
-  transform: translateY(clamp(-2.25rem, -3vh, -1rem));
+  transform: translateY(clamp(-0.8rem, -1.3vh, -0.45rem));
 }
 
 .about-hero__crest img {

@@ -172,7 +172,7 @@ export function App() {
             </div>
             <div>
               <span>⌂</span>
-              <strong>15</strong>
+              <strong>12</strong>
               <small>сельсоветов</small>
             </div>
             <div>
