@@ -162,7 +162,7 @@ export function App() {
           <div className="about-stats" aria-label="Ключевые показатели">
             <div>
               <span>♙</span>
-              <strong>46 327</strong>
+              <strong>20 400</strong>
               <small>жителей</small>
             </div>
             <div>
