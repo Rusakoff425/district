@@ -30,7 +30,6 @@ export const selsovets: Selsovet[] = [
           "https://yandex.ru/maps/?ll=55.7975%2C52.432778&z=14&pt=55.7975%2C52.432778,pm2rdm",
         verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Старомурапталово",
-        notes: "Координаты относятся к деревне, не к отдельному объекту.",
       },
     ],
   },
@@ -52,7 +51,6 @@ export const selsovets: Selsovet[] = [
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Якшимбетово_(Куюргазинский_район)",
-        notes: "Координаты относятся к селу, не к мечети.",
       },
       {
         id: "sight-02-02",
@@ -79,7 +77,6 @@ export const selsovets: Selsovet[] = [
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Якупово_(Куюргазинский_район)",
-        notes: "Координаты относятся к селу, не к отдельной мечети.",
       },
     ],
   },
@@ -95,9 +92,10 @@ export const selsovets: Selsovet[] = [
         type: "населённый пункт",
         description:
           "Административный центр сельсовета; в открытом источнике подтверждены статус и описание, но точная машиночитаемая координата в этой выгрузке не зафиксирована.",
-        verificationStatus: "not_found",
+        mapUrl:
+          "https://yandex.ru/maps/-/CTv7uA8Ohttps://yandex.ru/maps/-/CTv7uA8O",
+        verificationStatus: "exact",
         sourceUrl: "https://ru.wikipedia.org/wiki/Кривле-Илюшкино",
-        notes: "Нужна ручная проверка в Яндекс/Google/OSM.",
       },
       {
         id: "sight-03-02",
@@ -105,10 +103,11 @@ export const selsovets: Selsovet[] = [
         type: "населённый пункт",
         description:
           "Деревня в составе Кривле-Илюшкинского сельсовета; можно использовать как fallback-точку после ручной проверки.",
-        verificationStatus: "not_found",
+        mapUrl:
+          "https://yandex.ru/maps/-/CTv7uF~Z",
+        verificationStatus: "exact",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Знаменка_(Куюргазинский_район)",
-        notes: "Нужна ручная проверка координат.",
       },
     ],
   },
@@ -158,10 +157,9 @@ export const selsovets: Selsovet[] = [
           "Административный центр Шабагишского сельсовета; координаты использовать как опорную точку карточки.",
         coordinates: { lat: 52.716111, lng: 55.521944 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.521944%2C52.716111&z=14&pt=55.521944%2C52.716111,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7UAN1",
         verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Шабагиш",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
       },
       {
         id: "sight-05-02",
@@ -171,11 +169,10 @@ export const selsovets: Selsovet[] = [
           "Населённый пункт с природно-топонимической ценностью; координаты указаны как fallback по центру населённого пункта.",
         coordinates: { lat: 52.691667, lng: 55.510833 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.510833%2C52.691667&z=14&pt=55.510833%2C52.691667,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7U8yd",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Холодный_Ключ_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
       },
     ],
   },
@@ -205,11 +202,10 @@ export const selsovets: Selsovet[] = [
           "Деревня в составе Зяк-Ишметовского сельсовета; координаты указаны по центру деревни как опорная точка для будущих памятных мест.",
         coordinates: { lat: 52.884722, lng: 55.396667 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.396667%2C52.884722&z=14&pt=55.396667%2C52.884722,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7EN27",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Михайловка_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
       },
     ],
   },
@@ -242,8 +238,7 @@ export const selsovets: Selsovet[] = [
           "https://yandex.ru/maps/?ll=55.976389%2C52.638889&z=14&pt=55.976389%2C52.638889,pm2rdm",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
-          "https://ru.wikipedia.org/wiki/Горный_Ключ_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
+          "https://ru.wikipedia.org/wiki/Горный_Ключ_(Башкортостан)",
       },
     ],
   },
@@ -277,7 +272,6 @@ export const selsovets: Selsovet[] = [
           "https://yandex.ru/maps/?ll=55.429444%2C52.659444&z=14&pt=55.429444%2C52.659444,pm2rdm",
         verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Кинья-Абыз",
-        notes: "Для музея нужна отдельная ручная проверка точки.",
       },
       {
         id: "sight-08-03",
@@ -285,9 +279,10 @@ export const selsovets: Selsovet[] = [
         type: "населённый пункт",
         description:
           "Деревня в составе Свободинского сельсовета после преобразований; точка требует уточнения перед публикацией.",
-        verificationStatus: "not_found",
-        sourceUrl: "https://ru.wikipedia.org/wiki/Куюргазинский_район",
-        notes: "Координаты не внесены в текущую выгрузку.",
+        verificationStatus: "fallback_settlement_center",
+        sourceUrl: "https://ru.wikipedia.org/wiki/Тимербаево",
+        mapUrl:
+          "hhttps://yandex.ru/maps/-/CTv7YNZl",
       },
     ],
   },
@@ -317,11 +312,10 @@ export const selsovets: Selsovet[] = [
           "Деревня в составе Отрадинского сельсовета; координаты указаны как опорная точка для карты.",
         coordinates: { lat: 52.591667, lng: 55.897222 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.897222%2C52.591667&z=14&pt=55.897222%2C52.591667,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7e4Lu",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
-          "https://ru.wikipedia.org/wiki/Новая_Уралка_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
+          "https://ru.wikipedia.org/wiki/Новая_Уралка",
       },
     ],
   },
@@ -339,10 +333,9 @@ export const selsovets: Selsovet[] = [
           "Административный центр Ленинского сельсовета; координаты указаны как опорная точка карточки.",
         coordinates: { lat: 52.82, lng: 55.66 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.66%2C52.82&z=14&pt=55.66%2C52.82,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7iL7u",
         verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Бугульчан",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
       },
       {
         id: "sight-10-02",
@@ -352,11 +345,10 @@ export const selsovets: Selsovet[] = [
           "Деревня в составе Ленинского сельсовета; координаты указаны как fallback-точка.",
         coordinates: { lat: 52.78, lng: 55.62 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.62%2C52.78&z=14&pt=55.62%2C52.78,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7mVYC",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
-          "https://ru.wikipedia.org/wiki/Ковалёвка_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
+          "https://ru.wikipedia.org/wiki/Ковалёвка_(Башкортостан)",
       },
     ],
   },
@@ -372,9 +364,10 @@ export const selsovets: Selsovet[] = [
         type: "населённый пункт",
         description:
           "Административный центр сельсовета; точные координаты в текущей выгрузке не зафиксированы.",
-        verificationStatus: "not_found",
+        mapUrl:
+          "https://yandex.ru/maps/-/CTv7MZJB",
+        verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Илькинеево",
-        notes: "Нужна ручная проверка в Яндекс/Google/OSM.",
       },
       {
         id: "sight-11-02",
@@ -384,11 +377,10 @@ export const selsovets: Selsovet[] = [
           "Село в составе Илькинеевского сельсовета; координаты можно использовать как fallback внутри сельсовета.",
         coordinates: { lat: 52.736111, lng: 55.704444 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.704444%2C52.736111&z=14&pt=55.704444%2C52.736111,pm2rdm",
+          "https://yandex.ru/maps/-/CTv7IVm2",
         verificationStatus: "fallback_settlement_center",
         sourceUrl:
           "https://ru.wikipedia.org/wiki/Новомусино_(Куюргазинский_район)",
-        notes: "Координаты требуют дополнительной валидации перед продакшеном.",
       },
     ],
   },
@@ -406,10 +398,9 @@ export const selsovets: Selsovet[] = [
           "Районный центр Куюргазинского района; рядом сосредоточены административные, культурные и общественные объекты.",
         coordinates: { lat: 52.716667, lng: 55.8 },
         mapUrl:
-          "https://yandex.ru/maps/?ll=55.8%2C52.716667&z=14&pt=55.8%2C52.716667,pm2rdm",
+          "https://yandex.ru/maps/-/CTvz7WYt",
         verificationStatus: "fallback_settlement_center",
         sourceUrl: "https://ru.wikipedia.org/wiki/Ермолаево_(Башкортостан)",
-        notes: "Координаты относятся к селу Ермолаево, не к отдельным объектам.",
       },
       {
         id: "sight-12-02",
