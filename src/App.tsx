@@ -294,16 +294,6 @@ export function App() {
             ) : (
               <FestivalInfoPanel festival={selectedFestival} />
             )}
-            <div className="details-hint">
-              <span>i</span>
-              <p>
-                {territoriesView === "map"
-                  ? "Выберите другой сельсовет на карте, чтобы узнать больше о территории"
-                  : territoriesView === "settlements"
-                    ? "Выберите крупный маркер населенного пункта на карте, чтобы открыть описание справа"
-                    : "Выберите логотип фестиваля на карте, чтобы открыть отдельное описание справа"}
-              </p>
-            </div>
           </section>
         </div>
       </section>

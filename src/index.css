@@ -453,20 +453,6 @@ a {
     linear-gradient(to right, var(--gold), var(--gold)) center / 100% 1px no-repeat;
 }
 
-.app__intro span::before,
-.app__intro span::after {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  content: "";
-}
-
-.app__intro span::after {
-  float: right;
-}
-
 .app__intro p {
   margin: 0;
 }
